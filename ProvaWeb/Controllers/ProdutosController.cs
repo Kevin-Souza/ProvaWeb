@@ -92,6 +92,7 @@ namespace ProvaWeb.Controllers
             Produto produto = context.produtos.Find(id);
             context.produtos.Remove(produto);
             context.SaveChanges();
+            TempData["Message"] = "Produto" + produto.Nome.ToUpper() + "foi removido";
             return RedirectToAction("index");
         }
     }
